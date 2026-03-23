@@ -1,4 +1,4 @@
-from Card import Card
+from .Card import Card
 
 # Specific type of card that inherits from Card.
 # It has its own implementation of the play() function
