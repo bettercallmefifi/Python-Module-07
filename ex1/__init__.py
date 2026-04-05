@@ -1,6 +1,4 @@
-from .SpellCard import SpellCard
-from .ArtifactCard import ArtifactCard
-from .Deck import Deck
-from .SpellCard import EffectType
+from .factories import HealingCreatureFactory, TransformCreatureFactory
 
-__all__ = ['SpellCard', 'ArtifactCard', 'Deck', 'EffectType']
+# Expose only the factories to keep concrete implementations hidden
+__all__ = ["HealingCreatureFactory", "TransformCreatureFactory"]
