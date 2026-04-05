@@ -1,4 +1,5 @@
-from .Card import Card
-from .CreatureCard import CreatureCard
+from .factories import CreatureFactory, FlameFactory, AquaFactory
 
-__all__ = ["Card", "CreatureCard"]
+# We only expose the factories, hiding the direct implementation
+# of concrete creatures from the package user.
+__all__ = ["CreatureFactory", "FlameFactory", "AquaFactory"]
