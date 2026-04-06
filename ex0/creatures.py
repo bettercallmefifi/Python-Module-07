@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class Creature(ABC):
     """
-    Abstract class representing a base creature.
+    abstract class representing a base creature.
     """
     def __init__(self, name: str, creature_type: str):
         self.name = name
@@ -11,15 +11,16 @@ class Creature(ABC):
 
     @abstractmethod
     def attack(self) -> str:
-        """Abstract method for the attack."""
+        """abstract method for the attack."""
         pass
 
     def describe(self) -> str:
-        """Concrete generic method for description."""
+        """concrete generic method for description."""
         return f"{self.name} is a {self.type} type Creature"
 
 
-# --- Fire Family ---
+"""fire family"""
+
 
 class Flameling(Creature):
     def __init__(self):
@@ -37,7 +38,8 @@ class Pyrodon(Creature):
         return f"{self.name} uses Flamethrower!"
 
 
-# --- Water Family ---
+"""water family"""
+
 
 class Aquabub(Creature):
     def __init__(self):

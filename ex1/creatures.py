@@ -1,12 +1,12 @@
 from ex0.creatures import Creature
 from .capabilities import HealCapability, TransformCapability
 
-# --- Healing Creatures Family ---
+"""healing creatures family"""
 
 
 class Sproutling(Creature, HealCapability):
     def __init__(self):
-        # Initialize both parent classes explicitly
+        "initialize both parent classes explicitly"
         Creature.__init__(self, "Sproutling", "Grass")
         HealCapability.__init__(self)
 
@@ -29,7 +29,8 @@ class Bloomelle(Creature, HealCapability):
         return f"{self.name} heals itself and others for a large amount"
 
 
-# --- Transforming Creatures Family ---
+"""transforming creatures family"""
+
 
 class Shiftling(Creature, TransformCapability):
     def __init__(self):
@@ -37,7 +38,7 @@ class Shiftling(Creature, TransformCapability):
         TransformCapability.__init__(self)
 
     def attack(self) -> str:
-        # The attack behavior changes based on the persistent state
+        """The attack behavior changes based on the persistent state"""
         if self.is_transformed:
             return f"{self.name} performs a boosted strike!"
         return f"{self.name} attacks normally."

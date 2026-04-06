@@ -3,20 +3,20 @@ from ex1 import HealingCreatureFactory, TransformCreatureFactory
 
 def test_healing_creatures() -> None:
     """
-    Tests the creation, description, attack, and heal abilities
+    tests the creation, description, attack, and heal abilities
     of the healing creature family.
     """
     print("Testing Creature with healing capability")
     factory = HealingCreatureFactory()
 
-    # Testing Base Creature
+    """testing base creature"""
     base = factory.create_base()
     print("  base:")
     print(base.describe())
     print(base.attack())
     print(base.heal())
 
-    # Testing Evolved Creature
+    """testing evolved creature"""
     evolved = factory.create_evolved()
     print("  evolved:")
     print(evolved.describe())
@@ -26,13 +26,13 @@ def test_healing_creatures() -> None:
 
 def test_transforming_creatures() -> None:
     """
-    Tests the creation, description, attack, and transformation abilities
+    tests the creation, description, attack, and transformation abilities
     of the transforming creature family.
     """
     print("Testing Creature with transform capability")
     factory = TransformCreatureFactory()
 
-    # Testing Base Creature
+    """testing base creature"""
     base = factory.create_base()
     print("  base:")
     print(base.describe())
@@ -41,7 +41,7 @@ def test_transforming_creatures() -> None:
     print(base.attack())
     print(base.revert())
 
-    # Testing Evolved Creature
+    """testing evolved creature"""
     evolved = factory.create_evolved()
     print("  evolved:")
     print(evolved.describe())

@@ -4,30 +4,30 @@ from ex1.capabilities import HealCapability, TransformCapability
 
 
 class InvalidStrategyError(Exception):
-    """Custom exception raised when a strategy """
+    """custom exception raised when a strategy """
     """is applied to an incompatible creature."""
     pass
 
 
 class BattleStrategy(ABC):
     """
-    Abstract strategy class defining how a creature should act in a tournament.
+    abstract strategy class defining how a creature should act in a tournament.
     """
     @abstractmethod
     def is_valid(self, creature: Creature) -> bool:
-        """Returns True if the creature is compatible with this strategy."""
+        """returns True if the creature is compatible with this strategy."""
         pass
 
     @abstractmethod
     def act(self, creature: Creature) -> None:
-        """Executes the strategy's actions."""
+        """executes the strategy's actions."""
         pass
 
 
 class NormalStrategy(BattleStrategy):
-    """Normal strategy: simply attacks."""
+    """normal strategy: simply attacks."""
     def is_valid(self, creature: Creature) -> bool:
-        # Suitable for any Creature
+        """Suitable for any Creature"""
         return isinstance(creature, Creature)
 
     def act(self, creature: Creature) -> None:
@@ -40,9 +40,9 @@ class NormalStrategy(BattleStrategy):
 
 
 class AggressiveStrategy(BattleStrategy):
-    """Aggressive strategy: transforms, attacks, then reverts."""
+    """aggressive strategy: transforms, attacks, then reverts."""
     def is_valid(self, creature: Creature) -> bool:
-        # Only suitable for creatures with TransformCapability
+        """only suitable for creatures with TransformCapability"""
         return isinstance(creature, TransformCapability)
 
     def act(self, creature: Creature) -> None:
@@ -57,9 +57,9 @@ class AggressiveStrategy(BattleStrategy):
 
 
 class DefensiveStrategy(BattleStrategy):
-    """Defensive strategy: attacks, then heals."""
+    """defensive strategy: attacks, then heals."""
     def is_valid(self, creature: Creature) -> bool:
-        # Only suitable for creatures with HealCapability
+        """Only suitable for creatures with HealCapability"""
         return isinstance(creature, HealCapability)
 
     def act(self, creature: Creature) -> None:

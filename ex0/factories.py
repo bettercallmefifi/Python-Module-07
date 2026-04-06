@@ -4,7 +4,7 @@ from .creatures import Creature, Flameling, Pyrodon, Aquabub, Torragon
 
 class CreatureFactory(ABC):
     """
-    Abstract factory to create creatures of the same family.
+    abstract factory to create creatures of the same family.
     """
     @abstractmethod
     def create_base(self) -> Creature:
@@ -16,7 +16,7 @@ class CreatureFactory(ABC):
 
 
 class FlameFactory(CreatureFactory):
-    """Concrete factory for the Fire family."""
+    """concrete factory for the Fire family."""
     def create_base(self) -> Creature:
         return Flameling()
 
@@ -25,7 +25,7 @@ class FlameFactory(CreatureFactory):
 
 
 class AquaFactory(CreatureFactory):
-    """Concrete factory for the Water family."""
+    """concrete factory for the Water family."""
     def create_base(self) -> Creature:
         return Aquabub()
 

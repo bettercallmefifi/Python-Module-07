@@ -5,7 +5,7 @@ from .creatures import Sproutling, Bloomelle, Shiftling, Morphagon
 
 class HealingCreatureFactory(CreatureFactory):
     """
-    Concrete factory for the healing creatures family.
+    concrete factory for the healing creatures family.
     """
     def create_base(self) -> Creature:
         return Sproutling()
@@ -16,7 +16,7 @@ class HealingCreatureFactory(CreatureFactory):
 
 class TransformCreatureFactory(CreatureFactory):
     """
-    Concrete factory for the transforming creatures family.
+    concrete factory for the transforming creatures family.
     """
     def create_base(self) -> Creature:
         return Shiftling()
